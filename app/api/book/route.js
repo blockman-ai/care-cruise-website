@@ -9,7 +9,7 @@ export async function POST(req) {
 
     const email = await resend.emails.send({
       from: "Care Cruise <booking@carecruise.care>",
-      to: "carecruisebusiness@gmail.com",
+      to: ["carecruisebusiness@gmail.com"],
       subject: "New Care Cruise Ride Request",
       html: `
         <h2>New Care Cruise Ride Request</h2>
