@@ -53,7 +53,7 @@ export default function Home() {
   }
 
   return (
-    <main className="min-h-screen bg-white text-slate-900">
+    <main className="min-h-screen bg-white font-sans text-slate-900">
       <nav className="sticky top-0 z-50 bg-white/95 shadow-sm backdrop-blur">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4">
           <div className="flex items-center gap-3">
@@ -85,7 +85,7 @@ export default function Home() {
             <h2 className="text-5xl font-black leading-tight">
               Safe, compassionate rides for every medical appointment.
             </h2>
-            <p className="mt-6 text-lg leading-8 text-blue-100">
+            <p className="mt-6 max-w-prose text-lg leading-[1.9] text-blue-100">
               Care Cruise LLC provides professional non-emergency medical transportation
               for doctor visits, dialysis, therapy, hospital discharge, senior rides,
               and companion transportation.
@@ -162,7 +162,7 @@ export default function Home() {
             <div key={service.title} className="rounded-3xl border border-slate-100 bg-white p-6 shadow-lg">
               <div className="mb-4 text-4xl">💗</div>
               <h3 className="text-xl font-black text-[#0A2342]">{service.title}</h3>
-              <p className="mt-3 text-slate-600">{service.description}</p>
+              <p className="copy-body mt-3">{service.description}</p>
             </div>
           ))}
         </div>
@@ -178,36 +178,45 @@ export default function Home() {
             className="rounded-3xl shadow-xl"
           />
 
-          <div>
+          <div className="max-w-xl">
             <p className="font-bold text-pink-500">Founder & CEO</p>
             <h2 className="mt-3 text-4xl font-black text-[#0A2342]">
-              Meet Leticia Grant
+              Meet Leticia
             </h2>
-            <p className="mt-6 text-lg leading-8 text-slate-600">
-              Care Cruise LLC was founded by Leticia Grant, a compassionate healthcare
-              professional whose passion has always been helping others.
-            </p>
-            <p className="mt-4 text-slate-600">
-              With over 16 years of healthcare experience, 5 years as a Special Needs
-              Bus Driver, and 5 years as a Commercial Driver&apos;s License (CDL) holder,
-              Leticia has dedicated her career to safely transporting and caring for
-              individuals with dignity, patience, and respect.
-            </p>
-            <p className="mt-4 text-slate-600">
-              As a devoted mother of three, she understands the importance of treating
-              every passenger like family. Her vibrant personality, genuine compassion,
-              and commitment to serving others are the heart of Care Cruise.
-            </p>
-            <p className="mt-4 text-slate-600">
-              Currently pursuing her Certified Nursing Assistant (CNA) certification
-              while continuing her journey as a business entrepreneur, Leticia remains
-              focused on providing dependable transportation that gives families peace
-              of mind.
-            </p>
-            <p className="mt-4 text-slate-600">
-              At Care Cruise, every ride is more than transportation—it is Compassion
-              In Motion.
-            </p>
+            <div className="mt-8 space-y-6">
+              <p className="copy-lead">
+                Hello, I&apos;m Leticia, the proud founder of Care Cruise.
+              </p>
+              <p className="copy-prose">
+                For more than 16 years, I&apos;ve dedicated my career to caring for others.
+                As a former Certified Nursing Assistant (CNA) and now a Special Needs Bus
+                Driver with over 5 years of CDL experience, I&apos;ve had the privilege of
+                helping people through every stage of life&apos;s journey.
+              </p>
+              <p className="copy-prose">
+                Throughout my career, I&apos;ve learned that something as simple as reliable
+                transportation can make a meaningful difference in someone&apos;s day.
+                That&apos;s why I created Care Cruise. I wanted to provide safe, dependable
+                transportation delivered with compassion, patience, and genuine care.
+              </p>
+              <p className="copy-prose">
+                As a devoted mother of three, I understand how important it is to know your
+                loved ones are in safe hands. My mission is simple: to ensure every client
+                feels valued, respected, and cared for from the moment they&apos;re picked up
+                until they safely arrive at their destination.
+              </p>
+              <p className="copy-prose">
+                Whether you&apos;re traveling to a medical appointment, dialysis treatment,
+                physical therapy, returning home after a hospital stay, or simply need a
+                trusted ride, you can count on Care Cruise for professionalism, punctuality,
+                and a personal touch.
+              </p>
+              <p className="copy-prose">
+                Here, you&apos;re never just another passenger. You become part of the Care
+                Cruise family. Every ride is more than transportation. It&apos;s Compassion
+                In Motion.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -217,7 +226,7 @@ export default function Home() {
         <h2 className="mt-3 text-4xl font-black text-[#0A2342]">
           Why Families Choose Care Cruise
         </h2>
-        <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-600">
+        <p className="copy-prose mt-6 text-lg">
           Families choose Care Cruise because every ride is handled with patience,
           respect, and genuine care.
         </p>
@@ -264,7 +273,7 @@ export default function Home() {
             <div key={item.title} className="rounded-3xl border border-slate-100 bg-white p-6 shadow-lg">
               <div className="mb-4 text-4xl">{item.icon}</div>
               <h3 className="text-xl font-black text-[#0A2342]">{item.title}</h3>
-              <p className="mt-3 text-slate-600">{item.description}</p>
+              <p className="copy-body mt-3">{item.description}</p>
             </div>
           ))}
         </div>
@@ -282,7 +291,7 @@ export default function Home() {
               "Care Cruise makes medical rides feel less stressful.",
             ].map((quote) => (
               <div key={quote} className="rounded-3xl bg-white/10 p-6">
-                <p className="text-lg">“{quote}”</p>
+                <p className="text-lg leading-[1.85]">“{quote}”</p>
                 <p className="mt-5 font-bold text-pink-300">Care Cruise Client</p>
               </div>
             ))}
@@ -294,7 +303,7 @@ export default function Home() {
         <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-2">
           <div className="text-white">
             <h2 className="text-4xl font-black">Request a Ride</h2>
-            <p className="mt-4 text-lg text-pink-100">
+            <p className="mt-4 max-w-prose text-lg leading-[1.85] text-pink-100">
               Submit your trip details and Care Cruise will follow up to confirm availability.
             </p>
             <p className="mt-6 text-lg font-bold">Call: (609) 381-1082</p>
