@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import TestimonialCard from "./components/TestimonialCard";
+import FaqAccordion from "./components/FaqAccordion";
 
 export default function Home() {
   const [form, setForm] = useState({
@@ -16,6 +18,153 @@ export default function Home() {
   });
 
   const [status, setStatus] = useState("");
+
+  const testimonials = [
+    {
+      quote:
+        "My specialist visits are always on time. Leticia is professional, patient, and makes each ride feel comfortable. I know I can count on Care Cruise.",
+      name: "Margaret R.",
+      service: "Medical Appointment",
+    },
+    {
+      quote:
+        "Three days a week for dialysis is a lot to manage. Care Cruise has never let me down. They are always punctual and treat me with respect.",
+      name: "James T.",
+      service: "Dialysis Transportation",
+    },
+    {
+      quote:
+        "Getting to physical therapy after my knee surgery felt overwhelming at first. The rides are calm, safe, and they always help me in and out with care.",
+      name: "Dorothy L.",
+      service: "Physical Therapy",
+    },
+    {
+      quote:
+        "My daughter arranged rides for my cardiology appointments. Friendly service, never rushed, and I feel safe every single time.",
+      name: "Robert M.",
+      service: "Senior Transportation",
+    },
+    {
+      quote:
+        "Coming home from the hospital was a lot to handle. Care Cruise made it simple. Patient, kind, and helped me get settled right at my door.",
+      name: "Patricia K.",
+      service: "Hospital Discharge",
+    },
+    {
+      quote:
+        "My mother uses Care Cruise for her appointments. Having someone caring with her means everything. We finally have real peace of mind.",
+      name: "Susan H.",
+      service: "Companion Transportation",
+    },
+  ];
+
+  const trustPoints = [
+    {
+      title: "Licensed & Insured",
+      description: "Your safety and peace of mind always come first.",
+    },
+    {
+      title: "Professional Service",
+      description: "Friendly, respectful, and dependable transportation.",
+    },
+    {
+      title: "Compassion In Motion",
+      description: "We treat every client like family.",
+    },
+    {
+      title: "Reliable Scheduling",
+      description: "On-time transportation you can count on.",
+    },
+    {
+      title: "Experienced Care",
+      description: "Over 16 years serving individuals and families.",
+    },
+    {
+      title: "Local South Jersey",
+      description:
+        "Proudly serving Cape May, Cumberland, Atlantic County, and surrounding areas.",
+    },
+  ];
+
+  const rideSteps = [
+    {
+      icon: "📅",
+      title: "Schedule Your Ride",
+      description:
+        "Call, email, or submit our online form with your trip details and preferred date and time.",
+    },
+    {
+      icon: "✅",
+      title: "We Confirm Your Trip",
+      description:
+        "Our team reviews your request and follows up to confirm availability and any special needs.",
+    },
+    {
+      icon: "🚐",
+      title: "Safe & Comfortable Transportation",
+      description:
+        "Enjoy dependable door-to-door service delivered with patience, respect, and genuine care.",
+    },
+    {
+      icon: "💗",
+      title: "Arrive With Peace Of Mind",
+      description:
+        "Reach your destination safely and on schedule, knowing you are in trusted hands.",
+    },
+  ];
+
+  const faqItems = [
+    {
+      question: "What areas do you serve?",
+      answer:
+        "Care Cruise proudly serves Cape May County, Cumberland County, Atlantic County, and surrounding South Jersey areas. Additional destinations may be available by appointment.",
+    },
+    {
+      question: "How do I schedule a ride?",
+      answer:
+        "You can book online using our ride request form, call us at (609) 381-1082, or email carecruisebusiness@gmail.com. We will confirm your trip details and availability.",
+    },
+    {
+      question: "Do you provide door-to-door assistance?",
+      answer:
+        "Yes. We provide compassionate door-to-door transportation with patient assistance from pickup to your destination.",
+    },
+    {
+      question: "Do you transport seniors?",
+      answer:
+        "Yes. We offer senior-friendly transportation designed to help older adults maintain independence while getting safely to appointments and daily activities.",
+    },
+    {
+      question: "Do you provide recurring transportation?",
+      answer:
+        "Yes. Many clients use Care Cruise for recurring rides such as dialysis, physical therapy, and routine medical appointments. We work with you to create a dependable schedule.",
+    },
+    {
+      question: "What payment methods do you accept?",
+      answer:
+        "Contact us directly to discuss payment options for your transportation needs. We will provide clear information when you schedule your ride.",
+    },
+    {
+      question: "How far in advance should I book?",
+      answer:
+        "We recommend booking at least 24 to 48 hours in advance when possible. For recurring or urgent needs, call us and we will do our best to accommodate you.",
+    },
+    {
+      question: "Can a family member ride along?",
+      answer:
+        "In many cases, yes. Please let us know when scheduling so we can confirm accommodations for your trip.",
+    },
+    {
+      question: "Are you licensed and insured?",
+      answer:
+        "Yes. Care Cruise is licensed and insured, and your safety is always our top priority.",
+    },
+    {
+      question: "What if I need to cancel?",
+      answer:
+        "Please call us as soon as possible if your plans change. We will work with you to reschedule or adjust your trip with understanding and flexibility.",
+    },
+  ];
 
   function updateForm(e) {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -232,46 +381,9 @@ export default function Home() {
         </p>
 
         <div className="mt-10 grid gap-6 md:grid-cols-3">
-          {[
-            {
-              icon: "❤️",
-              title: "Family-Owned & Operated",
-              description:
-                "Care Cruise is built with family values, personal commitment, and pride in serving the community.",
-            },
-            {
-              icon: "🚐",
-              title: "Safe & Comfortable Transportation",
-              description:
-                "Clean, dependable transportation designed to help riders feel secure, relaxed, and cared for.",
-            },
-            {
-              icon: "🩺",
-              title: "Healthcare Experience",
-              description:
-                "Led by Leticia Grant, with over 16 years of healthcare experience and a heart for helping others.",
-            },
-            {
-              icon: "👵",
-              title: "Senior-Friendly Service",
-              description:
-                "Patient, respectful service for seniors who need dependable support getting to appointments and daily needs.",
-            },
-            {
-              icon: "🕒",
-              title: "Reliable & On-Time",
-              description:
-                "We value your time and understand how important it is to arrive safely and on schedule.",
-            },
-            {
-              icon: "🤝",
-              title: "Compassionate Door-to-Door Assistance",
-              description:
-                "Supportive transportation from pickup to destination with comfort, dignity, and peace of mind.",
-            },
-          ].map((item) => (
+          {trustPoints.map((item) => (
             <div key={item.title} className="rounded-3xl border border-slate-100 bg-white p-6 shadow-lg">
-              <div className="mb-4 text-4xl">{item.icon}</div>
+              <div className="mb-4 text-2xl font-bold text-pink-500">✅</div>
               <h3 className="text-xl font-black text-[#0A2342]">{item.title}</h3>
               <p className="copy-body mt-3">{item.description}</p>
             </div>
@@ -279,24 +391,64 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-[#0A2342] px-5 py-20 text-white">
+      <section className="bg-slate-50 px-5 py-20">
         <div className="mx-auto max-w-7xl">
-          <p className="font-bold text-pink-300">Testimonials</p>
-          <h2 className="mt-3 text-4xl font-black">Trusted care starts here.</h2>
+          <p className="font-bold text-pink-500">First Ride Experience</p>
+          <h2 className="mt-3 text-4xl font-black text-[#0A2342]">What To Expect</h2>
+          <p className="copy-prose mt-6 text-lg">
+            From your first call to your final destination, Care Cruise keeps every step
+            simple, safe, and stress-free.
+          </p>
 
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
-            {[
-              "Professional, kind, and dependable service.",
-              "Perfect for seniors who need safe transportation.",
-              "Care Cruise makes medical rides feel less stressful.",
-            ].map((quote) => (
-              <div key={quote} className="rounded-3xl bg-white/10 p-6">
-                <p className="text-lg leading-[1.85]">“{quote}”</p>
-                <p className="mt-5 font-bold text-pink-300">Care Cruise Client</p>
+          <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            {rideSteps.map((step, index) => (
+              <div
+                key={step.title}
+                className="rounded-3xl border border-slate-100 bg-white p-6 shadow-lg"
+              >
+                <p className="text-sm font-bold text-pink-500">Step {index + 1}</p>
+                <div className="mb-4 mt-3 text-4xl">{step.icon}</div>
+                <h3 className="text-xl font-black text-[#0A2342]">{step.title}</h3>
+                <p className="copy-body mt-3">{step.description}</p>
               </div>
             ))}
           </div>
         </div>
+      </section>
+
+      <section className="bg-[#0A2342] px-5 py-20 text-white">
+        <div className="mx-auto max-w-7xl">
+          <p className="font-bold text-pink-300">Testimonials</p>
+          <h2 className="mt-3 text-4xl font-black">Trusted care starts here.</h2>
+          <p className="mt-6 max-w-prose text-lg leading-[1.85] text-blue-100">
+            Families across South Jersey trust Care Cruise for dependable, compassionate
+            transportation.
+          </p>
+
+          <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {testimonials.map((testimonial) => (
+              <TestimonialCard
+                key={testimonial.name}
+                quote={testimonial.quote}
+                name={testimonial.name}
+                service={testimonial.service}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" className="mx-auto max-w-4xl px-5 py-20">
+        <p className="font-bold text-pink-500">FAQ</p>
+        <h2 className="mt-3 text-4xl font-black text-[#0A2342]">
+          Frequently Asked Questions
+        </h2>
+        <p className="copy-prose mt-6 text-lg">
+          Find answers to common questions about scheduling, service areas, and what to
+          expect with Care Cruise.
+        </p>
+
+        <FaqAccordion items={faqItems} />
       </section>
 
       <section id="book" className="bg-gradient-to-br from-pink-500 to-[#0A2342] px-5 py-20">
@@ -330,6 +482,30 @@ export default function Home() {
               </p>
             )}
           </form>
+        </div>
+      </section>
+
+      <section className="bg-slate-50 px-5 py-20">
+        <div className="mx-auto max-w-4xl text-center">
+          <h2 className="text-4xl font-black text-[#0A2342]">Ready to Schedule Your Ride?</h2>
+          <p className="copy-prose mx-auto mt-6 text-lg">
+            Our team is here to provide dependable, compassionate transportation for you
+            and your loved ones.
+          </p>
+          <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
+            <a
+              href="#book"
+              className="rounded-full bg-pink-500 px-8 py-4 text-center font-bold text-white"
+            >
+              Book A Ride
+            </a>
+            <a
+              href="tel:16093811082"
+              className="rounded-full bg-[#0A2342] px-8 py-4 text-center font-bold text-white"
+            >
+              Call (609) 381-1082
+            </a>
+          </div>
         </div>
       </section>
 
